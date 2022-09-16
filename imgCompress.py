@@ -28,7 +28,7 @@ def recursiveCompress (path) :
             recursiveCompress(path +'\\' + i)
             print('Comeback to ', path)
         elif (os.path.isfile(path + '\\' + i)) & ~('compressed_' in i) : # Compess images by mozjpeg ignore files with 'compressed_' in name
-            os.system("cjpeg -quant-table 2 -quality 75 -outfile {} {}".format(path + "\\" + "compressed_" + i, path + "\\" + i))
+            os.system("mozjpeg\\cjpeg -quant-table 2 -quality 75 -outfile {} {}".format(path + "\\" + "compressed_" + i, path + "\\" + i))
 
             if (os.path.exists(path + "\\" + "compressed_" + i)) : #Cheks for the existing compressed file and deleting original
                 os.remove (path + '\\' + i)
